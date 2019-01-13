@@ -111,7 +111,7 @@ class uwp extends AbstractModule
         $newPanel->id = $id;
         $newPanel->size = $size;
         $newPanel->position = $position;
-        $newPanel->classes->add('uwp-card')
+        $newPanel->classes->add('uwp-card');
         $newPanel->borderRadius = 2;
         $newPanel->borderWidth = 0;
         //$newPanel->borderWidth = 1;
@@ -257,6 +257,7 @@ class uwp extends AbstractModule
             
             $newBarBackground->add($newSearchField);
             $newBarBackground->add($newSearchButton);
+            
         } 
         
         $timer = new TimerScript();
@@ -271,12 +272,17 @@ class uwp extends AbstractModule
         
         $timer->start();
         
+        var_dump("ID::SideBar");
+        var_dump("  "."NavButton::".$foldingButton);
+        var_dump("  "."SearchField::".$searchField);
+            
         return $newBarBackground;
     }
     
     function uwpSideBarItem($itemIcon, $itemName)
     {
         static $id;
+        
         $newSideBarButton = new UXPanel;
         $newSideBarButton->id = '_barButton'.$id;
             $id++;
@@ -306,7 +312,18 @@ class uwp extends AbstractModule
         $newSideBarButton->add($newSideBarText);  
         
         $this->_barItemsContainer->content->add($newSideBarButton); 
+        
+        var_dump("ID::".$newSideBarButton->id);
+        var_dump("  "."ICON::".$itemIcon);
+        var_dump("  "."TEXT::".$itemName);
     }
     
-    
+    function uwpSideBarSeparator() {
+        $newSideBarSeparator = new UXSeparator;
+        $newSideBarSeparator->classes->add('uwp-separator');
+        $newSideBarSeparator->padding = 10;
+        $newSideBarSeparator->width = 300;
+        
+        $this->_barItemsContainer->content->add($newSideBarSeparator); 
+    }
 }

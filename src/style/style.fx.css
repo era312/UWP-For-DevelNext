@@ -614,4 +614,13 @@
     -fx-font-size: 15px;
     -fx-text-fill: black;
 }
+
+//-----
+//SEPARATOR
+//-----
+.uwp-separator .line {
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0; /* its make really one-pixel-border */
+    -fx-border-color: #c4c4c4;
+}
     
