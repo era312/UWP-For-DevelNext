@@ -189,25 +189,26 @@ class uwp extends AbstractModule
     
     function uwpSideBar($foldingButton, $searchField)
     {
-        $newBarBody = new UXPanel;
-        $newBarBody->id = '_barBody';
-        $newBarBody->size = [300, 50];
-        $newBarBody->position = [0, 0];
-        $newBarBody->backgroundColor = '#f2f2f2';
-        $newBarBody->borderWidth = 0;
-        $newBarBody->topAnchor = true;
-        $newBarBody->bottomAnchor = true;
+        $newBarBackground = new UXPanel;
+        $newBarBackground->id = '_barBackground';
+        $newBarBackground->size = [300, 50];
+        $newBarBackground->position = [0, 0];
+        $newBarBackground->backgroundColor = '#f2f2f2';
+        $newBarBackground->borderWidth = 0;
+        $newBarBackground->topAnchor = true;
+        $newBarBackground->bottomAnchor = true;
         
-            /* $timer = new TimerScript();
-            $timer->interval = 90;
-            $timer->autoStart = true;
-            $timer->repeatable = true;
+        $newBarItemsContainer = new UXScrollPane;
+        $newBarItemsContainer->id = '_barItemsContainer';
+        $newBarItemsContainer->size = [300, 300];
+        $newBarItemsContainer->style = '-fx-background: #f2f2f2;';
+        $newBarItemsContainer->hbarPolicy = 'NEVER';
+        $newBarItemsContainer->scrollMaxX = 0;
+        $newBarItemsContainer->content = new UXVBox;
+        
+        $newBarBackground->add($newBarItemsContainer);
             
-            $timer->on('action', function() {
-                $this->_barBody->size = [300, $this->height + 100];
-                    
-                $this->_barContainer->size = [300, $this->height - $this->_barContainer->y -39];
-            }); */
+        $tmSize = 5;    
         
         if ($foldingButton) {
             $newFoldingButton = new UXFlatButton;
@@ -221,18 +222,22 @@ class uwp extends AbstractModule
             $newFoldingButton->textAlignment = 'CENTER';
             $newFoldingButton->alignment = 'CENTER';
             
-            $newBarBody->add($newFoldingButton);
-        }
+            $tmSize = 41;
+            
+            $newBarBackground->add($newFoldingButton);
+        } 
         
         if ($searchField) {
             $newSearchField = new UXTextField;
             $newSearchField->id = '_searchField';
             $newSearchField->size = [280, 30];
+            
             if ($foldingButton) {
                 $newSearchField->position = [10, 41];
             } else {
                 $newSearchField->position = [10, 5];
             }
+            
             $newSearchField->classes->add('uwp-search-field');
             $newSearchField->focusTraversable = false;
             $newSearchField->promptText = 'Search';
@@ -248,34 +253,25 @@ class uwp extends AbstractModule
             $newSearchButton->alignment = 'CENTER';
             $newSearchButton->focusTraversable = false;
             
-            $newBarBody->add($newSearchField); $newBarBody->add($newSearchButton);
-        }
-        
-        $newBarContainer = new UXScrollPane;
-        $newBarContainer->id = '_barContainer';
-        $newBarContainer->size = [300, 150];
-        $newBarContainer->style = '-fx-background: #f2f2f2;';
-        $newBarContainer->hbarPolicy = 'NEVER';
-        
-            if ($foldingButton == true and $searchField == false) {
-                $newBarContainer->position = [0, 36];
-                
-            } elseif ($searchField == true and $foldingButton == false) {
-                $newBarContainer->position = [0, 41];
-                
-            } elseif ($foldingButton == true and $searchField == true) {
-                $newBarContainer->position = [0, 76];
-                
-            } else {
-                $newBarContainer->position = [0, 5];
-                
-            }
+            $tmSize = 76;
             
-        $newBarContainer->content = new UXVBox;
-        $newBarBody->add($newBarContainer);
+            $newBarBackground->add($newSearchField);
+            $newBarBackground->add($newSearchButton);
+        } 
         
-        // $timer->start();
-        return $newBarBody;
+        $timer = new TimerScript();
+        $timer->interval = 10;
+        $timer->autoStart = true;
+        $timer->repeatable = true;
+        
+        $timer->on('action', function() use ($tmSize) {
+            $this->_barItemsContainer->y = $tmSize;
+            $this->_barItemsContainer->size = [300, ($this->height - 39) - $this->_barItemsContainer->y];
+        });
+        
+        $timer->start();
+        
+        return $newBarBackground;
     }
     
     function uwpSideBarItem($itemIcon, $itemName)
@@ -309,7 +305,7 @@ class uwp extends AbstractModule
         $newSideBarButton->add($newSideBarIcon);
         $newSideBarButton->add($newSideBarText);  
         
-        $this->_barContainer->content->add($newSideBarButton); 
+        $this->_barItemsContainer->content->add($newSideBarButton); 
     }
     
     
