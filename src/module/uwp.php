@@ -326,4 +326,32 @@ class uwp extends AbstractModule
         
         $this->_barItemsContainer->content->add($newSideBarSeparator); 
     }
+    
+    function uwpRadioGroup($id, $width, $position)
+    {
+        $newRadioGroup = new UXRadioGroupPane;
+        $newRadioGroup->id = $id;
+        $newRadioGroup->width = $width;
+        $newRadioGroup->position = $position;
+        $newRadioGroup->selectedIndex = 0;
+        $newRadioGroup->spacing = 10;
+        
+        return $newRadioGroup;
+    }
+    
+    function uwpIconButton($id, $postion, $icon)
+    {
+        $newIconButton = new UXFlatButton;
+        $newIconButton->id = $id;
+        $newIconButton->position = $postion;
+        $newIconButton->text = $icon;
+        $newIconButton->textAlignment = 'CENTER';
+        $newIconButton->alignment = 'CENTER';
+        $newIconButton->classes->add('uwp-icon-button');
+        $newIconButton->graphicTextGap = 0;
+        $newIconButton->size = [56, 56];
+        
+        return $newIconButton;
+    }
+    
 }
