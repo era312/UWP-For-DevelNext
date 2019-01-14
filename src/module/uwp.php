@@ -193,7 +193,7 @@ class uwp extends AbstractModule
         $newBarBackground->id = '_barBackground';
         $newBarBackground->size = [300, 50];
         $newBarBackground->position = [0, 0];
-        $newBarBackground->backgroundColor = '#f2f2f2';
+        $newBarBackground->backgroundColor = '#E6E6E6';
         $newBarBackground->borderWidth = 0;
         $newBarBackground->topAnchor = true;
         $newBarBackground->bottomAnchor = true;
@@ -201,7 +201,7 @@ class uwp extends AbstractModule
         $newBarItemsContainer = new UXScrollPane;
         $newBarItemsContainer->id = '_barItemsContainer';
         $newBarItemsContainer->size = [300, 300];
-        $newBarItemsContainer->style = '-fx-background: #f2f2f2;';
+        $newBarItemsContainer->style = '-fx-background: #E6E6E6;';
         $newBarItemsContainer->hbarPolicy = 'NEVER';
         $newBarItemsContainer->scrollMaxX = 0;
         $newBarItemsContainer->content = new UXVBox;
@@ -272,6 +272,7 @@ class uwp extends AbstractModule
         
         $timer->start();
         
+        //DEBUG
         var_dump("ID::SideBar");
         var_dump("  "."NavButton::".$foldingButton);
         var_dump("  "."SearchField::".$searchField);
@@ -313,6 +314,7 @@ class uwp extends AbstractModule
         
         $this->_barItemsContainer->content->add($newSideBarButton); 
         
+        //DEBUG
         var_dump("ID::".$newSideBarButton->id);
         var_dump("  "."ICON::".$itemIcon);
         var_dump("  "."TEXT::".$itemName);
@@ -325,6 +327,9 @@ class uwp extends AbstractModule
         $newSideBarSeparator->width = 300;
         
         $this->_barItemsContainer->content->add($newSideBarSeparator); 
+        
+        //DEBUG
+        var_dump("ID::".$newSideBarSeparator->id);
     }
     
     function uwpRadioGroup($id, $width, $position)
@@ -335,6 +340,11 @@ class uwp extends AbstractModule
         $newRadioGroup->position = $position;
         $newRadioGroup->selectedIndex = 0;
         $newRadioGroup->spacing = 10;
+        
+        //DEBUG
+        var_dump("ID::".$id);
+        var_dump("  "."WIDTH::".$width);
+        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         
         return $newRadioGroup;
     }
@@ -351,7 +361,31 @@ class uwp extends AbstractModule
         $newIconButton->graphicTextGap = 0;
         $newIconButton->size = [56, 56];
         
+        //DEBUG
+        var_dump("ID::".$id);
+        var_dump("  "."X::".$position[0].", Y::".$position[1]);
+        var_dump("  "."CLASSES::".$newIconButton->classesString);
+        
         return $newIconButton;
     }
     
+    function uwpComboBox($id, $width, $position) 
+    {
+        $newComboBox = new UXComboBox;
+        $newComboBox->id = $id;
+        $newComboBox->size = [$width, 32];
+        $newComboBox->position = $position;
+        $newComboBox->visibleRowCount = 5;
+        $newComboBox->editable = false;
+        
+        //DEBUG
+        var_dump("ID::".$id);
+        var_dump("  "."WIDTH::".$width);
+        var_dump("  "."X::".$position[0].", Y::".$position[1]);
+        
+        return $newComboBox;
+    }
+    
 }
+
+
