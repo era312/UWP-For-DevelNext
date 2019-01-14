@@ -11,10 +11,10 @@
  * add debug for uwpIconButton
  * add debug for uwpRadioGroup
  * add debug for uwpSideBarSeparator
-#### 0.13x2
+#### 0.13-2
  * new uwpRadioGroup function
  * new uwpIconButton function
-#### 0.13x1
+#### 0.13-1
  * new uwpSideBarSeparator function
  * new uwp separetor jfx style
  * add dump for uwpSideBarItem function & uwpSideBar function
