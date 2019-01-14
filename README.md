@@ -4,6 +4,13 @@
 ###### ReadMe will be filled later
 
 ### Version list
+#### 0.14
+ * new color theme for scroll bar & scroll bar components
+ * add combo box jfx style
+ * add uwpComboBox function
+ * add debug for uwpIconButton
+ * add debug for uwpRadioGroup
+ * add debug for uwpSideBarSeparator
 #### 0.13x2
  * new uwpRadioGroup function
  * new uwpIconButton function
