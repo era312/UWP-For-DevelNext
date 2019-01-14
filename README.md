@@ -8,10 +8,10 @@
  * new uwpRadioGroup function
  * new uwpIconButton function
 #### 0.13x1
- * new SideBarSeparator function
+ * new uwpSideBarSeparator function
  * new uwp separetor jfx style
  * add dump for uwpSideBarItem function & uwpSideBar function
- * fix uwp-panel
+ * fix uwpPanel function
 #### 0.12
  * new scroll bar jfx style
  * new side bar structure
