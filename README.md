@@ -16,4 +16,4 @@
  * new scroll bar jfx style
  * new side bar structure
 #### 0.11
- * add left bar
+ * add uwpSideBar function
