@@ -1,7 +1,12 @@
 ![UWPForDevelNext](https://github.com/era312/UWP-For-DevelNext/blob/master/logo_uwp.png) 
 
 ### ReadMe
-###### ReadMe will be filled later
+#### How to install?
+1. Create new DevelNext project
+2. [Download](https://github.com/era312/Store/archive/master.zip) and unpack repository archive
+3. Drag and drop unpacked files from ```src/module/``` to ```./src/app/modules/```
+4. Drag and drop unpacked files from ```src/style/``` to ```./src/.theme/``` and replace
+5. Add uwp module to form
 
 ### Version list
 #### 0.14
