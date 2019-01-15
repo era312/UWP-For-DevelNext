@@ -1,4 +1,4 @@
-![logo](https://github.com/era312/UWP-For-DevelNext/blob/master/logo_uwp.png) 
+![UWPForDevelNext](https://github.com/era312/UWP-For-DevelNext/blob/master/logo_uwp.png) 
 
 ### ReadMe
 ###### ReadMe will be filled later
