@@ -1,4 +1,4 @@
-![UWPForDevelNext](https://github.com/era312/UWP-For-DevelNext/blob/master/logo_uwp.png) 
+![UWPForDevelNext](https://github.com/era312/UWP-For-DevelNext/blob/master/logo.png) 
 
 ### ReadMe
 #### How to install?
@@ -6,7 +6,12 @@
 2. [Download](https://github.com/era312/Store/archive/master.zip) and unpack repository archive
 3. Drag and drop unpacked files from ```unpackedArchive/src/module/``` to ```./src/app/modules/```
 4. Drag and drop unpacked files from ```unpackedArchive/src/style/``` to ```./src/.theme/``` and replace
-5. Add uwp module to form
+
+#### How to use?
+1. add uwp module form
+2. Creating objects by calling functions
+Example:
+[Creating objects by calling functions](https://github.com/era312/UWP-For-DevelNext/blob/master/CellFunctionEx.jpg) 
 
 ### Version list
 #### 0.14
