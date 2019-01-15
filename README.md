@@ -4,8 +4,8 @@
 #### How to install?
 1. Create new DevelNext project
 2. [Download](https://github.com/era312/Store/archive/master.zip) and unpack repository archive
-3. Drag and drop unpacked files from ```src/module/``` to ```./src/app/modules/```
-4. Drag and drop unpacked files from ```src/style/``` to ```./src/.theme/``` and replace
+3. Drag and drop unpacked files from ```unpackedArchive/src/module/``` to ```./src/app/modules/```
+4. Drag and drop unpacked files from ```unpackedArchive/src/style/``` to ```./src/.theme/``` and replace
 5. Add uwp module to form
 
 ### Version list
