@@ -51,4 +51,4 @@ How the program looks now. It's written using UWP Devel Next 0.15+
  * add uwpSideBar function
  
 ##
-##### [English]() Russian Ukraine
+##### [English]()   Russian   Ukraine
