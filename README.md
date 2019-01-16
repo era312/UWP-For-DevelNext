@@ -37,6 +37,7 @@
 ### 0.11
  * add uwpSideBar function
  
-## Language:
+##
+Language:
 
 [English]() Russian Ukraine
