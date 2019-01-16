@@ -1,5 +1,5 @@
 
-![UWPForDevelNext](https://github.com/era312/UWP-For-DevelNext/blob/master/logo.png) 
+![UWPForDevelNext](https://github.com/era312/UWP-For-DevelNext/blob/master/img/logo.png) 
 
 ### ReadMe
 #### How to install
@@ -14,16 +14,18 @@
 
 #### Example
 
-![Creating objects by calling functions](https://github.com/era312/UWP-For-DevelNext/blob/master/CellFunction.jpg) 
+![Creating objects by calling functions](https://github.com/era312/UWP-For-DevelNext/blob/master/img/CellFunction.jpg) 
 
 #### In future i'm create documentation program
 
 How the program looks now. It's written in UWP Devel Next 0.15+
 
-![Program](https://github.com/era312/UWP-For-DevelNext/blob/master/dkm.png)  
+![Program](https://github.com/era312/UWP-For-DevelNext/blob/master/img/dkm.png)  
 
 ### Version list
-#### 0.15
+#### 0.15-2
+ * add debug for uwpListPanel
+#### 0.15-1
  * delete $position from all functions
  * add uwpListPanel function and class
  * some fix from side bar colors
