@@ -9,7 +9,7 @@
 4. Drag and drop unpacked files from ```unpackedArchive/src/style/``` to ```./src/.theme/``` and replace
 
 #### How to use?
-1. add uwp module form
+1. add uwp module to form
 2. Creating objects by calling functions or add jfx class to object
 
 #### Example:
