@@ -18,7 +18,7 @@
 
 #### In future i'm create documentation program
 
-How the program looks now. It's written in UWP Devel Next library 0.15+
+How the program looks now. It's written in UWP Devel Next 0.15+
 
 ![Program](https://github.com/era312/UWP-For-DevelNext/blob/master/dkm.png)  
 
