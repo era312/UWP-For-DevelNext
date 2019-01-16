@@ -15,7 +15,16 @@
 #### Example:
 ![Creating objects by calling functions](https://github.com/era312/UWP-For-DevelNext/blob/master/CellFunction.jpg) 
 
+#### Plans
+ - Create more style
+ - made documentation program.
+![Creating objects by calling functions](https://github.com/era312/UWP-For-DevelNext/blob/master/dkm.jpg)  
+
 ### Version list
+#### 0.15
+ * delete $position from all functions
+ * add uwpListPanel function and class
+ * some fix from side bar colors
 #### 0.14
  * new color theme for scroll bar & scroll bar components
  * add combo box jfx style
