@@ -6,6 +6,15 @@ use std, gui, framework, app;
 
 class uwp extends AbstractModule
 {
+
+    /**
+     * @event action 
+     */
+    function doAction(ScriptEvent $e = null)
+    {    
+        var_dump('uwp connect');
+    }
+    
     //OLD
     function oldAddCardEffect($object) {
         $cardShadowEffect = new DropShadowEffectBehaviour();
@@ -24,46 +33,41 @@ class uwp extends AbstractModule
     }
     
     //NEW
-    function uwpPasswordField($id, $width, $position)
+    function uwpPasswordField($id, $width)
     {
         $newPasswordField = new UXPasswordField;
         $newPasswordField->id = $id;
         $newPasswordField->size = [$width, 32];
-        $newPasswordField->position = $position;
         $newPasswordField->classes->add('uwp-text-field');
         
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$width);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."CLASSES::".$newPasswordField->classesString);
         
         return $newPasswordField;
     }
     
-    function uwpTextField($id, $width, $position)
+    function uwpTextField($id, $width)
     {
         $newTextField = new UXTextField;
         $newTextField->id = $id;
         $newTextField->size = [$width, 32];
-        $newTextField->position = $position;
         $newTextField->classes->add('uwp-text-field');
         
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$width);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."CLASSES::".$newTextField->classesString);
         
         return $newTextField;
     }
     
-    function uwpButton($id, $width, $position, $animation)
+    function uwpButton($id, $width,  $animation)
     {
         $newButton = new UXFlatButton;
         $newButton->id = $id;
         $newButton->size = [$width, 32];
-        $newButton->position = $position;
         $newButton->classes->add('uwp-button');
         $newButton->textAlignment = 'CENTER';
         $newButton->alignment = 'CENTER'; 
@@ -79,19 +83,17 @@ class uwp extends AbstractModule
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$width);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."ANIMATION::".$animation);
         var_dump("  "."CLASSES::".$newButton->classesString);
         
         return $newButton;
     }
     
-    function uwpCheckBox($id, $width, $position)
+    function uwpCheckBox($id, $width)
     {
         $newCheckBox = new UXCheckbox;
         $newCheckBox->id = $id;
         $newCheckBox->size = [$width, 20];
-        $newCheckBox->position = $position;
         $newCheckBox->classes->add('uwp-check-box');
         $newCheckBox->textAlignment = 'LEFT';
         $newCheckBox->alignment = 'CENTER_LEFT'; 
@@ -99,23 +101,19 @@ class uwp extends AbstractModule
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$width);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."CLASSES::".$newCheckBox->classesString);
         
         return $newCheckBox;
     }
     
-    function uwpCardPanel($id, $size, $position, $shadow)
+    function uwpCardPanel($id, $size, $shadow)
     {
         $newPanel = new UXPanel;
         $newPanel->id = $id;
         $newPanel->size = $size;
-        $newPanel->position = $position;
         $newPanel->classes->add('uwp-card');
         $newPanel->borderRadius = 2;
         $newPanel->borderWidth = 0;
-        //$newPanel->borderWidth = 1;
-        //$newPanel->borderColor = '#cccccc';
         $newPanel->titleOffset = 0;
         $newPanel->titleColor = "black";
         $newPanel->titleFont = UXFont::of('Segoe UI', 14);   
@@ -131,57 +129,49 @@ class uwp extends AbstractModule
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$size[0].", HEIGHT::".$size[1]);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."SHADOW::".$shadow);
         var_dump("  "."CLASSES::".$newPanel->classesString);
         
         return $newPanel;
     }
     
-    function uwpVBox($id, $size, $position)
+    function uwpVBox($id, $size)
     {
         $newVbox = new UXVBox;
         $newVbox->id = $id;
         $newVbox->size = $size;
-        $newVbox->position = $position;
         
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$size[0].", HEIGHT::".$size[1]);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."CLASSES::".$newVbox->classesString);
         
         return $newVbox;
     }
     
-    function uwpHBox($id, $size, $position)
+    function uwpHBox($id, $size)
     {
         $newHbox = new UXHBox;
-        $newHbox->id = $id;
         $newHbox->size = $size;
-        $newHbox->position = $position;
         
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$size[0].", HEIGHT::".$size[1]);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."CLASSES::".$newHbox->classesString);
         
         return $newHbox;
     }
     
-    function uwpToggleButton($id, $width, $position)
+    function uwpToggleButton($id, $width)
     {
         $newToggleButton = new UXToggleButton;
         $newToggleButton->id = $id;
         $newToggleButton->size = [$width, 32];
-        $newToggleButton->position = $position;
         $newToggleButton->classes->add('uwp-toggle-button');
         
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$width);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."CLASSES::".$newToggleButton->classesString);
         
         return $newToggleButton;
@@ -193,7 +183,7 @@ class uwp extends AbstractModule
         $newBarBackground->id = '_barBackground';
         $newBarBackground->size = [300, 50];
         $newBarBackground->position = [0, 0];
-        $newBarBackground->backgroundColor = '#E6E6E6';
+        $newBarBackground->backgroundColor = '#EAEAEA';
         $newBarBackground->borderWidth = 0;
         $newBarBackground->topAnchor = true;
         $newBarBackground->bottomAnchor = true;
@@ -201,7 +191,7 @@ class uwp extends AbstractModule
         $newBarItemsContainer = new UXScrollPane;
         $newBarItemsContainer->id = '_barItemsContainer';
         $newBarItemsContainer->size = [300, 300];
-        $newBarItemsContainer->style = '-fx-background: #E6E6E6;';
+        $newBarItemsContainer->style = '-fx-background: #EAEAEA;';
         $newBarItemsContainer->hbarPolicy = 'NEVER';
         $newBarItemsContainer->scrollMaxX = 0;
         $newBarItemsContainer->content = new UXVBox;
@@ -332,28 +322,25 @@ class uwp extends AbstractModule
         var_dump("ID::".$newSideBarSeparator->id);
     }
     
-    function uwpRadioGroup($id, $width, $position)
+    function uwpRadioGroup($id, $width)
     {
         $newRadioGroup = new UXRadioGroupPane;
         $newRadioGroup->id = $id;
         $newRadioGroup->width = $width;
-        $newRadioGroup->position = $position;
         $newRadioGroup->selectedIndex = 0;
         $newRadioGroup->spacing = 10;
         
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$width);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         
         return $newRadioGroup;
     }
     
-    function uwpIconButton($id, $postion, $icon)
+    function uwpIconButton($id, $icon)
     {
         $newIconButton = new UXFlatButton;
         $newIconButton->id = $id;
-        $newIconButton->position = $postion;
         $newIconButton->text = $icon;
         $newIconButton->textAlignment = 'CENTER';
         $newIconButton->alignment = 'CENTER';
@@ -363,27 +350,60 @@ class uwp extends AbstractModule
         
         //DEBUG
         var_dump("ID::".$id);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         var_dump("  "."CLASSES::".$newIconButton->classesString);
         
         return $newIconButton;
     }
     
-    function uwpComboBox($id, $width, $position) 
+    function uwpComboBox($id, $width) 
     {
         $newComboBox = new UXComboBox;
         $newComboBox->id = $id;
         $newComboBox->size = [$width, 32];
-        $newComboBox->position = $position;
         $newComboBox->visibleRowCount = 5;
         $newComboBox->editable = false;
         
         //DEBUG
         var_dump("ID::".$id);
         var_dump("  "."WIDTH::".$width);
-        var_dump("  "."X::".$position[0].", Y::".$position[1]);
         
         return $newComboBox;
+    }
+    
+    function uwpListPanel($id, $textHeader, $text, $status) 
+    {
+        $newPanel = new UXPane;
+        $newPanel->id = $id;
+        $newPanel->size = [320, 120];
+        $newPanel->classes->add('uwp-list-panel');
+        
+        $newScaleAnim = new ScaleAnimationBehaviour();
+        $newScaleAnim->scale = 0.98;
+        $newScaleAnim->duration = 100;
+        $newScaleAnim->when = 'CLICK';
+        $newScaleAnim->apply($newPanel);
+        
+        $newTextHeader = new UXLabel;
+        $newTextHeader->id = "textHeader.".$id;
+        $newTextHeader->text = $textHeader;
+        $newTextHeader->position = [15, 15];
+        $newTextHeader->size = [210, 25];
+        $newTextHeader->classes->add('uwp-list-panel-text-header');
+        $newPanel->add($newTextHeader);
+        
+        $newText = new UXLabel;
+        $newText->id = "text.".$id;
+        $newText->text = $text;
+        $newText->position = [15, 15 + 25 + 5];
+        $newText->size = [320 - 30, 120 - 25 - 5 - 15 - 15];
+        $newText->textAlignment = 'LEFT';
+        $newText->alignment = 'TOP_LEFT';
+        $newText->wrapText = true;
+        $newText->tooltipText = $text;
+        $newText->classes->add('uwp-list-panel-text');
+        $newPanel->add($newText);
+        
+        return $newPanel;
     }
 
     
