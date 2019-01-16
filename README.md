@@ -36,3 +36,6 @@ Example:
  * new side bar structure
 #### 0.11
  * add uwpSideBar function
+ 
+ #
+ Language: [En](https://github.com/era312/UWP-For-DevelNext/archive/master.zip)
