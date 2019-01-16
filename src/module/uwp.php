@@ -370,7 +370,7 @@ class uwp extends AbstractModule
         return $newComboBox;
     }
     
-    function uwpListPanel($id, $textHeader, $text, $status) 
+    function uwpListPanel($id, $textHeader, $text /*, $status*/ ) 
     {
         $newPanel = new UXPane;
         $newPanel->id = $id;
@@ -403,6 +403,12 @@ class uwp extends AbstractModule
         $newText->classes->add('uwp-list-panel-text');
         $newPanel->add($newText);
         
+        //DEBUG
+        var_dump("ID::".$id);
+        var_dump("  "."HEADER::".$textHeader);
+        var_dump("  "."TEXT::".$text);
+        //var_dump("  "."STATUS::".$text);
+
         return $newPanel;
     }
 
