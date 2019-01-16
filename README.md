@@ -3,7 +3,7 @@
 ### ReadMe
 #### How to install?
 1. Create new DevelNext project
-2. [Download](https://github.com/era312/UWP-For-DevelNext.git) and unpack repository archive
+2. [Download](https://github.com/era312/UWP-For-DevelNext/archive/master.zip) and unpack repository archive
 3. Drag and drop unpacked files from ```unpackedArchive/src/module/``` to ```./src/app/modules/```
 4. Drag and drop unpacked files from ```unpackedArchive/src/style/``` to ```./src/.theme/``` and replace
 
