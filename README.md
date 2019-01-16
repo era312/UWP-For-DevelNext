@@ -1,7 +1,7 @@
 
 ![UWPForDevelNext](https://github.com/era312/UWP-For-DevelNext/blob/master/logo.png) 
 
-## ReadMe
+### ReadMe
 #### How to install?
 1. Create new DevelNext project
 2. [Download](https://github.com/era312/UWP-For-DevelNext/archive/master.zip) and unpack repository archive
@@ -14,7 +14,7 @@
 ##### Example:
 ![Creating objects by calling functions](https://github.com/era312/UWP-For-DevelNext/blob/master/CellFunction.jpg) 
 
-## Version list
+### Version list
 #### 0.14
  * new color theme for scroll bar & scroll bar components
  * add combo box jfx style
